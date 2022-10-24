@@ -12,7 +12,6 @@ import PartnerSection from 'sections/partner';
 import WorkFlow from 'sections/workflow';
 import TestimonialCard from 'sections/testimonial';
 import SecurePayment from 'sections/secure-payment';
-
 export default function IndexPage() {
   return (
     <ThemeProvider theme={theme}>

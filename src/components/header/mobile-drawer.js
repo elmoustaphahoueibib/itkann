@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Box } from 'theme-ui';
+import {Box, Image, jsx} from 'theme-ui';
 import { Scrollbars } from 'react-custom-scrollbars';
 import Drawer from 'components/drawer';
 import { DrawerContext } from '../../contexts/drawer/drawer.context';
@@ -8,10 +8,13 @@ import { Link } from 'react-scroll';
 import {
   FaFacebookF,
   FaTwitter,
-  FaGithubAlt,
-  FaDribbble,
+  FaInstagram,
+  FaLinkedinIn,
+  FaSnapchat,
 } from 'react-icons/fa';
 import menuItems from './header.data';
+
+import  Itkann  from "../../assets/itkann_cercle_goldtrans.svg";
 
 const social = [
   {
@@ -24,11 +27,15 @@ const social = [
   },
   {
     path: '/',
-    icon: <FaGithubAlt />,
+    icon: <FaLinkedinIn />,
   },
   {
     path: '/',
-    icon: <FaDribbble />,
+    icon: <FaInstagram />,
+  },
+  {
+    path: '/',
+    icon: <FaSnapchat />
   },
 ];
 
@@ -58,6 +65,16 @@ const MobileDrawer = () => {
     >
       <Scrollbars autoHide>
         <Box sx={styles.content}>
+          <div
+              style={
+                {
+                  display: 'flex',
+                  justifyContent: 'center'
+                }
+              }
+          >
+            <Image src={Itkann} alt="itkann" width={"150px"} />
+          </div>
           <Box sx={styles.menu}>
             {menuItems.map(({ path, label }, i) => (
               <Link
@@ -82,6 +99,7 @@ const MobileDrawer = () => {
                 </Box>
               ))}
             </Box>
+
           </Box>
         </Box>
       </Scrollbars>
@@ -198,3 +216,4 @@ const styles = {
 };
 
 export default MobileDrawer;
+

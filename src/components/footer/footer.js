@@ -1,7 +1,41 @@
 /** @jsx jsx */
-import { jsx, Heading, Box, Container, Text } from 'theme-ui';
+import {jsx, Heading, Box, Container, Text, Image} from 'theme-ui';
 import { Link } from 'components/link';
 import menuItems from './footer.data';
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+  FaSnapchat,
+} from 'react-icons/fa';
+import React from "react";
+import Itkann from "../../assets/itkann_cercle_whitetrans.svg";
+
+
+const social = [
+  {
+    path: '/',
+    icon: <FaFacebookF />,
+  },
+  {
+    path: '/',
+    icon: <FaTwitter />,
+  },
+  {
+    path: '/',
+    icon: <FaLinkedinIn />,
+  },
+  {
+    path: '/',
+    icon: <FaInstagram />,
+  },
+  {
+    path: '/',
+    icon: <FaSnapchat />
+  },
+];
+
 export default function Footer() {
   return (
     <footer sx={styles.footer}>
@@ -25,11 +59,22 @@ export default function Footer() {
         </Box>
       </Container>
       <Text sx={styles.footer.copyright}>
+        <div
+            style={
+              {
+                display: 'flex',
+                justifyContent: 'center'
+              }
+            }
+        >
+          <Image src={Itkann} alt="itkann" width={"150px"} />
+        </div>
         All right reserved - Design & Developed by
         <Link path="#" target="_blank">
           Itkann - SARL
         </Link>
       </Text>
+
     </footer>
   );
 }
@@ -81,13 +126,36 @@ const styles = {
         mb: '0px',
       },
     },
+    social: {
+      width: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+
+      icon: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'text',
+        fontSize: 14,
+        mr: '15px',
+        transition: 'all 0.25s',
+        cursor: 'pointer',
+        ':last-child': {
+          mr: '0',
+        },
+        '&:hover': {
+          color: 'secondary',
+        },
+      },
+    },
     copyright: {
       fontSize: ['14px', null, 1],
       width: '100%',
       textAlign: 'center',
       p: ['20px 20px'],
-      backgroundColor: '#FCFDFE',
-      color: 'text',
+      backgroundColor: 'gold',
+      color: 'white',
       a: {
         textDecoration: 'none',
         color: 'inherit',
