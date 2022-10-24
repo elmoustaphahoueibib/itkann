@@ -69,11 +69,12 @@ const MobileDrawer = () => {
               style={
                 {
                   display: 'flex',
-                  justifyContent: 'center'
+                  justifyContent: 'center',
+                  bottom: '80px'
                 }
               }
           >
-            <Image src={Itkann} alt="itkann" width={"150px"} />
+            <Image src={Itkann} alt="itkann" width={"90px"} />
           </div>
           <Box sx={styles.menu}>
             {menuItems.map(({ path, label }, i) => (
@@ -151,6 +152,7 @@ const styles = {
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
+    paddingBottom: '60px',
     a: {
       fontSize: '16px',
       fontWeight: '500',
@@ -160,10 +162,10 @@ const styles = {
       borderBottom: '1px solid #e8e5e5',
       transition: 'all 0.25s',
       '&:hover': {
-        color: 'secondary',
+        color: 'gold',
       },
       '&.active': {
-        color: 'secondary',
+        color: 'gold',
       },
     },
   },
@@ -195,7 +197,7 @@ const styles = {
         mr: '0',
       },
       '&:hover': {
-        color: 'secondary',
+        color: 'gold',
       },
     },
   },
@@ -216,3 +218,4 @@ const styles = {
 };
 
 export default MobileDrawer;
+
